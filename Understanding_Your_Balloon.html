@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Understanding Your Balloon — A Clear Path Forward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f1ea;
+  --bg-warm: #ede5d6;
+  --ink: #1a1f2e;
+  --ink-soft: #4a5266;
+  --accent: #c4633a;
+  --accent-deep: #8b3e1f;
+  --gold: #b8924a;
+  --green: #4a6741;
+  --green-light: #7ea66e;
+  --paper: #faf7f0;
+  --line: #d4cab8;
+  --shadow: rgba(26, 31, 46, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter Tight', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Hero */
+.hero {
+  min-height: 90vh;
+  background: var(--bg);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 60px 40px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(196, 99, 58, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(74, 103, 65, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+  color: var(--ink);
+  max-width: 900px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 300;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--ink-soft);
+  max-width: 700px;
+  margin-bottom: 60px;
+  line-height: 1.5;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+  max-width: 800px;
+}
+
+.stat-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-block-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+
+.stat-block-value {
+  font-family: 'Fraunces', serif;
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-block-detail {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* Section */
+.section {
+  padding: 120px 40px;
+  position: relative;
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 80px;
+  max-width: 800px;
+}
+
+.section-number {
+  font-family: 'Fraunces', serif;
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.section h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.section h2 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.section-intro {
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* What is a Balloon Section */
+.what-section {
+  background: var(--paper);
+}
+
+.balloon-explainer {
+  max-width: 800px;
+}
+
+.balloon-visual {
+  position: relative;
+  padding: 60px;
+  background: linear-gradient(135deg, var(--bg-warm) 0%, var(--paper) 100%);
+  border-radius: 4px;
+  box-shadow: 0 20px 60px var(--shadow);
+}
+
+.balloon-text h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.balloon-text p {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.balloon-text strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.callout {
+  background: var(--bg-warm);
+  border-left: 3px solid var(--gold);
+  padding: 24px 32px;
+  margin-top: 32px;
+}
+
+.callout-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.callout p {
+  margin-bottom: 0;
+  color: var(--ink);
+}
+
+/* Appreciation Section */
+.appreciation-section {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.appreciation-section h2 {
+  color: var(--paper);
+}
+
+.appreciation-section .section-intro {
+  color: rgba(250, 247, 240, 0.7);
+}
+
+.appreciation-section .section-number {
+  color: var(--gold);
+}
+
+.appreciation-section h2 em {
+  color: var(--gold);
+}
+
+.appreciation-hero-stat {
+  margin-top: 60px;
+  margin-bottom: 80px;
+  padding: 60px;
+  background: rgba(184, 146, 74, 0.08);
+  border: 1px solid rgba(184, 146, 74, 0.2);
+  text-align: center;
+}
+
+.big-number {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(5rem, 12vw, 9rem);
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 0.9;
+  margin-bottom: 24px;
+  letter-spacing: -0.04em;
+}
+
+.big-number em {
+  font-style: italic;
+}
+
+.big-number-label {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250, 247, 240, 0.7);
+  margin-bottom: 16px;
+}
+
+.big-number-source {
+  font-size: 0.85rem;
+  color: rgba(250, 247, 240, 0.5);
+  font-style: italic;
+}
+
+.appreciation-context {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.context-card {
+  padding: 32px;
+  background: rgba(250, 247, 240, 0.03);
+  border: 1px solid rgba(184, 146, 74, 0.15);
+}
+
+.context-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.context-card h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.context-card p {
+  color: rgba(250, 247, 240, 0.65);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Projection Section */
+.projection-section {
+  background: var(--bg-warm);
+}
+
+.projection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 60px;
+}
+
+.projection-card {
+  background: var(--paper);
+  padding: 48px;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.projection-card.recommended {
+  background: linear-gradient(180deg, var(--paper) 0%, #f7ede0 100%);
+  border-top: 3px solid var(--accent);
+}
+
+.projection-card.recommended::after {
+  content: 'MOST LIKELY';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  background: var(--accent);
+  color: var(--paper);
+  padding: 4px 10px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.projection-rate {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+
+.projection-rate strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.projection-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 32px;
+  color: var(--ink);
+}
+
+.projection-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.projection-row:last-child {
+  border-bottom: none;
+  padding-top: 24px;
+  margin-top: 8px;
+  border-top: 2px solid var(--ink);
+}
+
+.projection-row .year {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.projection-row .value {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.projection-row.gain {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  border-top: 2px solid var(--green);
+  margin-top: 12px;
+  padding-top: 24px;
+}
+
+.projection-row.gain .gain-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 600;
+}
+
+.projection-row.gain .gain-value {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--green);
+  line-height: 1;
+}
+
+.disclaimer-box {
+  margin-top: 80px;
+  padding: 32px;
+  background: var(--paper);
+  border-left: 3px solid var(--ink-soft);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.disclaimer-box strong {
+  color: var(--ink);
+}
+
+/* Strategies Section */
+.strategies-section {
+  background: var(--paper);
+}
+
+.strategy-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 40px;
+  padding: 48px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+
+.strategy-card:last-child {
+  border-bottom: none;
+}
+
+.strategy-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 3.5rem;
+  color: var(--accent);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.strategy-content h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.strategy-content > p {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+.strategy-mechanics {
+  background: var(--bg-warm);
+  padding: 32px;
+  border-radius: 4px;
+  margin-top: 16px;
+}
+
+.mechanics-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  padding: 12px 0;
+  align-items: baseline;
+}
+
+.mechanics-row:not(:last-child) {
+  border-bottom: 1px solid rgba(212, 202, 184, 0.5);
+}
+
+.mechanics-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.mechanics-text {
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.mechanics-text strong {
+  font-weight: 600;
+}
+
+/* Reality Check Section */
+.reality-section {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.reality-section h2 {
+  color: var(--paper);
+}
+
+.reality-section .section-intro {
+  color: rgba(250, 247, 240, 0.7);
+}
+
+.reality-section .section-number {
+  color: var(--gold);
+}
+
+.reality-section h2 em {
+  color: var(--gold);
+}
+
+.reality-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
+  margin-top: 60px;
+}
+
+.pillar {
+  padding: 40px;
+  background: rgba(250, 247, 240, 0.03);
+  border: 1px solid rgba(184, 146, 74, 0.15);
+  position: relative;
+}
+
+.pillar-icon {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 24px;
+  display: block;
+}
+
+.pillar h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.pillar p {
+  color: rgba(250, 247, 240, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.pillar p strong {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* Closing */
+.closing {
+  background: var(--bg);
+  padding: 120px 40px;
+  text-align: center;
+}
+
+.closing-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.closing h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+.closing h2 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.closing p {
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.signature {
+  padding-top: 48px;
+  margin-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.signature-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.signature-title {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+
+.signature-detail {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+  .balloon-explainer,
+  .reality-pillars,
+  .projection-grid,
+  .appreciation-context {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .strategy-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .mechanics-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .section {
+    padding: 80px 24px;
+  }
+  
+  .appreciation-hero-stat {
+    padding: 40px 24px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Understanding Your Balloon</div>
+    <h1>The 10-year balloon, <em>fully explained.</em></h1>
+    <p class="hero-subtitle">A clear walkthrough of how the balloon payment on your DPA second lien works, why it is structured this way, and how building equity over 10 years sets you up to handle it confidently — even with conservative appreciation assumptions.</p>
+    
+    <div class="hero-stats">
+      <div class="stat-block">
+        <span class="stat-block-label">Realistic Projection</span>
+        <span class="stat-block-value">3-5%</span>
+        <span class="stat-block-detail">Conservative annual appreciation</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-block-label">10-Year Equity Built</span>
+        <span class="stat-block-value">$163K+</span>
+        <span class="stat-block-detail">Even at conservative 3% per year</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-block-label">Years to Plan</span>
+        <span class="stat-block-value">10</span>
+        <span class="stat-block-detail">A full decade before the balloon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What is a Balloon Section -->
+<section class="section what-section">
+  <div class="section-content">
+    <div class="section-header">
+      <div class="section-number">— Part One</div>
+      <h2>So <em>what exactly</em> is a balloon payment?</h2>
+      <p class="section-intro">Let us start with the fundamentals. Once you understand how a balloon is structured, the path to handling it becomes clear.</p>
+    </div>
+    
+    <div class="balloon-explainer">
+      <div class="balloon-text">
+        <h3>Small monthly payments for 10 years. One larger payoff at year 10.</h3>
+        <p>Your DPA second lien is structured on a <strong>30-year amortization schedule</strong> — meaning your monthly payment is calculated as if you had 30 years to pay it off. That keeps your monthly payment very manageable at approximately <strong>$185 per month</strong>.</p>
+        <p>However, the loan itself <strong>matures at year 10</strong>. At that point, whatever balance is left becomes due. This is what is called a "balloon" — because the final payoff sits at the end like a balloon at the end of a string.</p>
+        
+        <div class="callout">
+          <div class="callout-label">The Honest Truth</div>
+          <p>Because the early payments on the second lien are mostly interest, the balance does not pay down much in 10 years. The balloon at year 10 will be approximately the same as your original loan — around <strong>$23,000</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Appreciation Section -->
+<section class="section appreciation-section">
+  <div class="section-content">
+    <div class="section-header">
+      <div class="section-number">— Part Two</div>
+      <h2>How <em>equity</em> builds over 10 years.</h2>
+      <p class="section-intro">Real estate markets fluctuate year to year — but over a 10-year horizon, equity builds reliably through two forces working together: paying down your loan balance and gradual property appreciation.</p>
+    </div>
+    
+    <div class="appreciation-hero-stat">
+      <div class="big-number-label">Realistic Long-Term Projection</div>
+      <div class="big-number"><em>3-5<span style="font-size: 0.6em;">%</span></em></div>
+      <div class="big-number-source">Conservative annual appreciation assumption for planning purposes</div>
+    </div>
+    
+    <div class="appreciation-context">
+      <div class="context-card">
+        <div class="context-num">i.</div>
+        <h4>Conservative By Design</h4>
+        <p>We are using 3-5% annual appreciation for planning purposes. This is a cautious assumption that accounts for normal market fluctuations year over year.</p>
+      </div>
+      <div class="context-card">
+        <div class="context-num">ii.</div>
+        <h4>Two Forces At Work</h4>
+        <p>Equity builds from both your loan principal paying down each month and gradual property appreciation. Together, they compound over time.</p>
+      </div>
+      <div class="context-card">
+        <div class="context-num">iii.</div>
+        <h4>10-Year Horizon</h4>
+        <p>Real estate is a long-term game. Short-term market dips smooth out over a decade. The math works in your favor across realistic scenarios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projection Section -->
+<section class="section projection-section">
+  <div class="section-content">
+    <div class="section-header">
+      <div class="section-number">— Part Three</div>
+      <h2>What your home could be <em>worth</em> at year 10.</h2>
+      <p class="section-intro">Three scenarios using different appreciation assumptions — from very conservative to the actual Carson City historical average. We are using your purchase price of $475,000 as the starting point.</p>
+    </div>
+    
+    <div class="projection-grid">
+      <div class="projection-card recommended">
+        <div class="projection-rate">Conservative — <strong>3% / year</strong></div>
+        <div class="projection-title">Cautious assumption — what we plan around.</div>
+        <div class="projection-row">
+          <span class="year">Year 0 — Today</span>
+          <span class="value">$475,000</span>
+        </div>
+        <div class="projection-row">
+          <span class="year">Year 5</span>
+          <span class="value">$550,659</span>
+        </div>
+        <div class="projection-row">
+          <span class="year">Year 10</span>
+          <span class="value">$638,378</span>
+        </div>
+        <div class="projection-row gain">
+          <span class="gain-label">Equity Gained</span>
+          <span class="gain-value">+$163,378</span>
+        </div>
+      </div>
+      
+      <div class="projection-card">
+        <div class="projection-rate">Moderate — <strong>4% / year</strong></div>
+        <div class="projection-title">Realistic mid-range projection.</div>
+        <div class="projection-row">
+          <span class="year">Year 0 — Today</span>
+          <span class="value">$475,000</span>
+        </div>
+        <div class="projection-row">
+          <span class="year">Year 5</span>
+          <span class="value">$577,886</span>
+        </div>
+        <div class="projection-row">
+          <span class="year">Year 10</span>
+          <span class="value">$702,949</span>
+        </div>
+        <div class="projection-row gain">
+          <span class="gain-label">Equity Gained</span>
+          <span class="gain-value">+$227,949</span>
+        </div>
+      </div>
+      
+      <div class="projection-card">
+        <div class="projection-rate">Optimistic — <strong>5% / year</strong></div>
+        <div class="projection-title">Strong but achievable scenario.</div>
+        <div class="projection-row">
+          <span class="year">Year 0 — Today</span>
+          <span class="value">$475,000</span>
+        </div>
+        <div class="projection-row">
+          <span class="year">Year 5</span>
+          <span class="value">$606,219</span>
+        </div>
+        <div class="projection-row">
+          <span class="year">Year 10</span>
+          <span class="value">$773,772</span>
+        </div>
+        <div class="projection-row gain">
+          <span class="gain-label">Equity Gained</span>
+          <span class="gain-value">+$298,772</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="disclaimer-box">
+      <strong>A note on these projections —</strong> Past performance does not guarantee future results, and real estate markets fluctuate year to year. We use conservative 3% appreciation as our planning baseline. Even in this most cautious scenario, you would have approximately $163,000 in equity by year 10 — far exceeding the $23,000 balloon balance. The math works in your favor across every realistic scenario.
+    </div>
+  </div>
+</section>
+
+<!-- Strategies Section -->
+<section class="section strategies-section">
+  <div class="section-content">
+    <div class="section-header">
+      <div class="section-number">— Part Four</div>
+      <h2>Three <em>strategies</em> for handling the balloon.</h2>
+      <p class="section-intro">You have multiple paths to satisfy the balloon when year 10 arrives. Here are the three most common — each one works.</p>
+    </div>
+    
+    <div class="strategy-card">
+      <div class="strategy-num">i.</div>
+      <div class="strategy-content">
+        <h3>Refinance into a single loan</h3>
+        <p>The most common path. Use your built equity to refinance your first mortgage into a new loan, and use that refinance to pay off the DPA second lien at the same time. You walk away with one clean mortgage — and likely at a better rate than you have today.</p>
+        
+        <div class="strategy-mechanics">
+          <div class="mechanics-row">
+            <span class="mechanics-label">When</span>
+            <span class="mechanics-text">Anytime you have built sufficient equity, ideally years 5-10</span>
+          </div>
+          <div class="mechanics-row">
+            <span class="mechanics-label">How it works</span>
+            <span class="mechanics-text">New first mortgage replaces both your current first lien and the DPA second lien — DPA gets paid off in full as part of the refinance closing.</span>
+          </div>
+          <div class="mechanics-row">
+            <span class="mechanics-label">Best for</span>
+            <span class="mechanics-text">Borrowers who plan to stay in the home long term and want to consolidate into one payment</span>
+          </div>
+          <div class="mechanics-row">
+            <span class="mechanics-label">Important note</span>
+            <span class="mechanics-text">The DPA program does not allow resubordination — meaning the second lien <strong>must</strong> be paid off when you refinance the first.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="strategy-card">
+      <div class="strategy-num">ii.</div>
+      <div class="strategy-content">
+        <h3>Sell the home before year 10</h3>
+        <p>The average homeowner moves or refinances every 7 years. If life takes you in a new direction before year 10 — Nevada appreciation has built you significant equity. The sale proceeds pay off both loans completely and leave money in your pocket.</p>
+        
+        <div class="strategy-mechanics">
+          <div class="mechanics-row">
+            <span class="mechanics-label">When</span>
+            <span class="mechanics-text">Anytime before year 10 — common for life changes like job moves, growing families, or relocation</span>
+          </div>
+          <div class="mechanics-row">
+            <span class="mechanics-label">How it works</span>
+            <span class="mechanics-text">At the closing of your sale, both loans are paid off from the sale proceeds. Whatever is left after both loans are satisfied is yours to keep.</span>
+          </div>
+          <div class="mechanics-row">
+            <span class="mechanics-label">Sample math</span>
+            <span class="mechanics-text">Sell at year 7 for $605,000 (5% appreciation). Pay off ~$435,000 first lien + ~$22,000 second lien = <strong>~$148,000 in net equity</strong> to you.</span>
+          </div>
+          <div class="mechanics-row">
+            <span class="mechanics-label">Best for</span>
+            <span class="mechanics-text">Borrowers whose plans may evolve over time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="strategy-card">
+      <div class="strategy-num">iii.</div>
+      <div class="strategy-content">
+        <h3>Pay it off directly at year 10</h3>
+        <p>The balloon balance is approximately $23,000 — manageable in a few different ways. Pay it off with savings, take out a HELOC against your equity, or refinance just the second lien on its own.</p>
+        
+        <div class="strategy-mechanics">
+          <div class="mechanics-row">
+            <span class="mechanics-label">When</span>
+            <span class="mechanics-text">At year 10 if you have not refinanced or sold by then</span>
+          </div>
+          <div class="mechanics-row">
+            <span class="mechanics-label">How it works</span>
+            <span class="mechanics-text">By year 10 you will likely have $200,000+ in built equity. The $23,000 balloon represents roughly 10% of that equity — easily covered by a HELOC or cash savings.</span>
+          </div>
+          <div class="mechanics-row">
+            <span class="mechanics-label">Best for</span>
+            <span class="mechanics-text">Borrowers who plan to stay long-term and prefer not to refinance the entire first mortgage</span>
+          </div>
+          <div class="mechanics-row">
+            <span class="mechanics-label">Bottom line</span>
+            <span class="mechanics-text">Even in the worst case, your equity vastly exceeds what you would owe on the balloon.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reality Check Section -->
+<section class="section reality-section">
+  <div class="section-content">
+    <div class="section-header">
+      <div class="section-number">— Part Five</div>
+      <h2>Why this works <em>in your favor.</em></h2>
+      <p class="section-intro">The structure of this loan was designed knowing how most homeowners actually live in their homes. Here is why the math is on your side.</p>
+    </div>
+    
+    <div class="reality-pillars">
+      <div class="pillar">
+        <span class="pillar-icon">i.</span>
+        <h4>Your equity will dwarf the balloon</h4>
+        <p>Even at a conservative 3% annual appreciation rate, you will have built approximately <strong>$163,000+ in equity</strong> by year 10. The balloon is around <strong>$23,000</strong>. Your equity will be roughly <strong>7x larger</strong> than what you owe on the balloon.</p>
+      </div>
+      
+      <div class="pillar">
+        <span class="pillar-icon">ii.</span>
+        <h4>You have 10 full years to plan</h4>
+        <p>This is not a surprise payment that catches you off guard. You know about it from day one — and you have a full decade to choose your strategy, build equity, and prepare. Most borrowers handle it well before year 10 ever arrives.</p>
+      </div>
+      
+      <div class="pillar">
+        <span class="pillar-icon">iii.</span>
+        <h4>You can prepay anytime</h4>
+        <p>There is no prepayment penalty on this loan. If you come into extra money — a bonus, a tax refund, an inheritance — you can pay down the second lien faster, reducing the balloon balance, or pay it off entirely whenever you choose.</p>
+      </div>
+      
+      <div class="pillar">
+        <span class="pillar-icon">iv.</span>
+        <h4>Real estate is a long-term game</h4>
+        <p>Markets fluctuate year to year — but over a 10-year horizon, equity reliably builds through both appreciation and principal paydown. <strong>You have time on your side.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Closing -->
+<section class="closing">
+  <div class="closing-content">
+    <h2>The balloon is a milestone — <em>not a problem.</em></h2>
+    <p>Once you understand how the structure works and how Carson City appreciation builds equity over time, the 10-year balloon transforms from something to fear into a planning tool. You have multiple paths to handle it. The math works in your favor across every realistic scenario.</p>
+    <p>Most importantly — you have a full decade to choose your strategy and put a plan in motion. We will be here through every step of the process, including when the time comes to refinance, sell, or pay off the balloon.</p>
+    
+    <div class="signature">
+      <div class="signature-name">Drake Khamis</div>
+      <div class="signature-title">Mortgage Loan Originator</div>
+      <div class="signature-detail">EPiQ Lending • NMLS# 173414</div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
